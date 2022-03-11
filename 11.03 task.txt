@@ -1,0 +1,62 @@
+using System;
+
+namespace Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Student student = new Student("Sefiyye", "Ferecova", 689, 100, true);
+            Console.WriteLine("");
+            student.Fullname();
+            Console.WriteLine("");
+            student.allInfo();
+            Console.WriteLine("");
+            student.examResult();
+        }
+    }
+
+    class Student
+    {
+        public string Name;
+        public string Surname;
+        public int Group;
+        public int Point;
+        public bool isGraduated;
+
+
+        public Student(string Name, string Surname, int Group, int Point, bool isGraduated)
+        {
+            this.Name = Name;
+            this.Surname = Surname;
+            this.Group = Group;
+            this.Point = Point;
+            this.isGraduated = isGraduated;
+
+            Console.WriteLine($"Name: {Name}, Surname: {Surname}, Group:{Group}, Point: {Point}, isGraduated:{isGraduated}");
+        }
+
+        public void Fullname()
+        {
+            Console.WriteLine($"Name: {Name},Surname: {Surname}");
+        }
+
+        public void allInfo()
+        {
+            Console.WriteLine($"Name: {Name}, Surname: {Surname}, Group:{Group}, Point: {Point}, isGraduated:{isGraduated}");
+            if (isGraduated == true)
+                Console.WriteLine("This student was a graduate");
+            else
+                Console.WriteLine("This student wsan't graduate");
+        }
+
+        public void examResult()
+        {
+            if (Point > 80)
+                Console.WriteLine($" This student's scores are {Point}.This student can enter the second exam");
+            else
+                Console.WriteLine($"This student's scores are {Point}.This student can't enter the seceond exam");
+        }
+    }
+}
